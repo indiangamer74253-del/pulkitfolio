@@ -6,8 +6,10 @@ body {
     background: #ffffff;
     font-family: 'Montserrat', sans-serif;
 }
-
 h1,
+.font-weight-bolder {
+  font-weight: 900 !important;
+}
 h2, 
 h3, 
 h4,
@@ -52,12 +54,19 @@ a:focus {
     -webkit-transition: ease-out 0.3s;
     -moz-transition: ease-out 0.3s;
 }
-
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 .btn:hover {
     color: #0062cc;
     background: transparent;
     box-shadow: inset 0 0 0 0 #0062cc;
     border-color: #0062cc;
+}
+.text-primary {
+  color:#cc00b3!important;
 }
 
 #loader {
@@ -314,8 +323,8 @@ a:focus {
 
 .hero .hero-btn .btn {
     margin-top: 35px;
-    color: #e6ece5;
-    background: #68c787;
+    color: #eef1ee;
+    background: #f1f7f3;
     box-shadow: inset 0 0 0 50px #031ba3;
 }   
 
@@ -1506,6 +1515,58 @@ a:focus {
         margin-bottom: 20px;
         font-size: 16px;
     }
+    .btn-play span {
+  display: block;
+  position: relative;
+  z-index: 3;
+  width: 0;
+  height: 0;
+  left: -1px;
+  border-left: 16px solid #0BCEAF;
+  border-top: 11px solid transparent;
+  border-bottom: 11px solid transparent;
+}
+   .btn-play:before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: block;
+  width: 60px;
+  height: 60px;
+  background: #ffffff;
+  border-radius: 100%;
+  animation: pulse-border 1500ms ease-out infinite;
+}
+
+.btn-play:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: block;
+  width: 60px;
+  height: 60px;
+  background: #ffffff;
+  border-radius: 100%;
+  transition: all 200ms;
+}
+
+.btn-play span {
+  display: block;
+  position: relative;
+  z-index: 3;
+  width: 0;
+  height: 0;
+  left: -1px;
+  border-left: 16px solid #0BCEAF;
+  border-top: 11px solid transparent;
+  border-bottom: 11px solid transparent;
+}
 
     .footer .footer-menu p {
         font-size: 16px;
